@@ -1,5 +1,6 @@
 /data-db
 /debug
 /composer.phar
+/vendor
 composer-setup.php
 composer.lock
