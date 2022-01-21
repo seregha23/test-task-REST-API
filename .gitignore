@@ -1,3 +1,5 @@
+.idea
+/vendor
 /data-db
 /debug
 /composer.phar
