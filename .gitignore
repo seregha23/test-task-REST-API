@@ -1,6 +1,6 @@
 .idea
-/data-db
 /vendor
+/data-db
 /debug
 /composer.phar
 composer-setup.php
