@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  php:
+    build: docker/php
+    volumes:
+      - ./:/app
+    working_dir: /app
+    user: '1000:1000'
+    ports:
+      - 8000:8000
+    command: php -S 0.0.0.0:8000 -t /app
+
+  db:
+    restart: always
+    image: mysql:5.7
+    container_name: test_radius
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./data-db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysqladmin
+      MYSQL_DATABASE: test_radius
+    ports:
+      - "3308:3308"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_USERNAME: 'root'
+      MYSQL_ROOT_PASSWORD: 'mysqladmin'
+    restart: always
+    ports:
+      - 8085:80
+    volumes:
+      - /sessions
+
+
+

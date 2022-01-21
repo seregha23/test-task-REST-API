@@ -1,0 +1,5 @@
+/data-db
+/debug
+/composer.phar
+composer-setup.php
+composer.lock
