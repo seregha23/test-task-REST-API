@@ -1,6 +1,7 @@
+.idea
 /data-db
-/debug
 /vendor
+/debug
 /composer.phar
 composer-setup.php
 composer.lock
